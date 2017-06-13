@@ -1,0 +1,11 @@
+# Host path to mount inside container as /mnt/geonode
+GEONODE_HOME=~/git/boundless/geonode
+# Host path to mount inside container as /mnt/exchange
+EXCHANGE_HOME=~/git/boundless/exchange
+
+# Host path to mount inside the container as /mnt/maploom
+MAPLOOM_HOME=~/git/boundless/MapLoom
+
+#Important: Don't use localhost or 127.0.0.1, use real external address
+GEOIP=10.217.134.245
+

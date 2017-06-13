@@ -15,17 +15,17 @@ ADD zz-init-exchange.sh /docker-entrypoint-initdb.d/
 # at runtime (producing e.g. errors about missing a conf file). So we leave
 # that VOLUME alone and use a different path that can be baked in, so that we
 # can get everything ready at build time and then start up fast for dev.
-ENV PGDATA=/var/lib/postgresql/data_docker
+#ENV PGDATA=/var/lib/postgresql/data_docker
 
 # Shut up a warning emitted by docker-entrypoint.sh
 ENV POSTGRES_PASSWORD=postgres
 # Normally docker-entrypoint.sh hangs at the end, here we pass --version as
 # a kludge to keep it from hanging in the foreground during build time.
-RUN /docker-entrypoint.sh postgres --version
+#RUN /docker-entrypoint.sh postgres --version
 
 # Since we already ran docker-entrypoint.sh at startup, it is redundant and
 # slow to run it again, so override the ENTRYPOINT from Postgres Dockerfile
-ENTRYPOINT []
+#ENTRYPOINT []
 
 # Start the service like the entrypoint does after it is done with init
-CMD ["gosu", "postgres", "postgres"]
+#CMD ["gosu", "postgres", "postgres"]
